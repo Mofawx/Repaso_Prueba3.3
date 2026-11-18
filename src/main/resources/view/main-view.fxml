@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?import javafx.scene.layout.*?><?import javafx.scene.control.*?>
+<BorderPane xmlns:fx="http://javafx.com/fxml" fx:controller="controller.MainController" prefWidth="980" prefHeight="590"
+            style="-fx-background-color:#f5f7fa;">
+    <top>
+        <Label text="Cursos de Capacitación · DAO / JSON / MySQL"
+               style="-fx-background-color:#164b75;-fx-text-fill:white;-fx-padding:18;-fx-font-size:21;-fx-font-weight:bold;"
+               maxWidth="Infinity"/>
+    </top>
+    <left>
+        <VBox spacing="9" prefWidth="280" style="-fx-padding:20;">
+            <Label text="Formulario" style="-fx-font-size:17;-fx-font-weight:bold;"/>
+            <Label text="Código"/>
+            <TextField fx:id="txtCodigo"/>
+            <Label text="Nombre"/>
+            <TextField fx:id="txtNombre"/>
+            <Label text="Precio base"/>
+            <TextField fx:id="txtPrecio"/>
+            <Label text="Tipo"/>
+            <ComboBox fx:id="cmbTipo" maxWidth="Infinity"/>
+            <Label fx:id="lblDetalle"/>
+            <TextField fx:id="txtDetalle"/>
+            <HBox spacing="6">
+                <Button text="Guardar" onAction="#guardar"/>
+                <Button text="Actualizar" onAction="#actualizar"/>
+            </HBox>
+            <HBox spacing="6">
+                <Button text="Eliminar" onAction="#eliminar"/>
+                <Button text="Limpiar" onAction="#limpiar"/>
+            </HBox>
+        </VBox>
+    </left>
+    <center>
+        <VBox spacing="12" style="-fx-padding:20;">
+            <Button text="Recargar" onAction="#cargar"/>
+            <TableView fx:id="tabla" VBox.vgrow="ALWAYS" >
+                <columns>
+                    <TableColumn fx:id="colCodigo" text="Código"/>
+                    <TableColumn fx:id="colNombre" text="Nombre"/>
+                    <TableColumn fx:id="colTipo" text="Tipo"/>
+                    <TableColumn fx:id="colDetalle" text="Detalle"/>
+                    <TableColumn fx:id="colPrecio" text="Precio"/>
+                    <TableColumn fx:id="colFinal" text="Valor final"/>
+                </columns>
+            </TableView>
+        </VBox>
+    </center>
+    <bottom>
+        <Label fx:id="lblEstado" text="Listo" style="-fx-padding:12;-fx-background-color:#e3ebf4;" maxWidth="Infinity"/>
+    </bottom>
+</BorderPane>
